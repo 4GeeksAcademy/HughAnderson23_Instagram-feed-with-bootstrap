@@ -4,6 +4,10 @@
 .navbar {
     display: flex;
 }
+.btn-close {
+    background-color: white;
+    border: none;
+}
 .mode {
     display: flex;
     justify-content: center;
