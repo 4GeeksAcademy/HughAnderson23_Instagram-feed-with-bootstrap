@@ -9,63 +9,150 @@
     <script src="https://kit.fontawesome.com/05fa1878ea.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="feed">
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand"><i class="fa-brands fa-instagram">Instagram</i></a>
-              <form class="d-flex" role="search">
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#new-post-modal">Create a New Post</button>               
-                <div class="btn-group">
-                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
-                        <i class="fa-solid fa-gear"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Profile</a></li>
-                      <li><a class="dropdown-item" href="#">Accesibility</a></li>
-                      <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Log Out</a></li>
-                    </ul>
+  <!--main container-->
+  <div class="container-fluid p-3">
+    <div class="row d-flex justify-content-center">
+
+    <!--Navbar-->
+      <!--Starting with Instagram Icon-->
+      <div class="col d-flex justify-content-center align-items-center fs-5 mb-3">
+        <i class="fa-brands fa-instagram"></i>
+        Instagram
+      </div>
+      
+      <!--Button Containers-->
+      <div class="col">     
+        
+        <!--Modal button--> 
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#new-post-modal">Create a New Post</button> 
+          <div class="modal fade" tabindex="-1" id="new-post-modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Create a new post</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+                </div>
+                  <div class="modal-body">
+                    <p>Caption:</p>
+                    <div class="input-group">
+                      <textarea class="form-control" aria-label="With textarea">Add the caption of your post here</textarea>
+                    </div>
+                    <br>
+                    <button type="button" class="btn" data-bs-dismiss="modal" ><i class="fa-solid fa-camera"></i></button>
+                    <button type="button" class="btn" data-bs-dismiss="modal" ><i class="fa-solid fa-location-dot"></i></button>
                   </div>
-              </form>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Publish</button>
+                  </div>
+              </div>
             </div>
-        </nav>
-        <div class="modal" tabindex="-1" id="new-post-modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Create a new post</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-      </div>
-      <div class="modal-body">
-        <p>Caption:</p>
-        <div class="input-group">
-          <textarea class="form-control" aria-label="With textarea">Add the caption of your post here</textarea>
+          </div> 
+
+        <!--Dropdown Gear button-->          
+          <div class="btn-group">
+            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+              <i class="fa-solid fa-gear"></i>
+            </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item text-danger" href="#">Log Out</a></li>
+              </ul>
+          </div>
         </div>
+      </div> 
+      
+      <!--Nav/Pills?I found a cool thing using javascript, need to initialize tablist?-->
+      <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active no-active-border" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa-solid fa-table-cells"></i></a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link no-active-border" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fa-solid fa-square"></i></a>
+        </li>
+      </ul>
+        
+      <!--Link setup-->
+        <div class="tab-content" id="pills-tabContent">
+          
+          <!--Grid Posts-->
+          <div class="tab-pane show fade active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+            <div class="card-group">  
+              <div class="card m-2" style="width: 35rem;"><img src="images/Picture_1.JPG" class=""></img></div>
+              <div class="card m-2" style="width: 35rem;"><img src="images/Picture_2.JPG" class=""></img></div>
+              <div class="card m-2" style="width: 35rem;"><img src="images/Picture_3.JPG" class=""></img></div>
+            </div>
+            <div class="card-group">
+              <div class="card m-2" style="width: 35rem;"><img src="images/Picture_4.JPG" class=""></img></div>
+              <div class="card m-2" style="width: 35rem;"><img src="images/Picture_5.JPG" class=""></img></div>
+              <div class="card m-2" style="width: 35rem;"><img src="images/Picture_6.JPG" class=""></img></div>
+            </div>
+            <div class="card-group">
+              <div class="card m-2" style="width: 35rem;"><img src="images/Picture_7.JPG" class=""></img></div>
+              <div class="card m-2" style="width: 35rem;"><img src="images/Picture_9.JPG" class=""></img></div>
+              <div class="card m-2" style="width: 35rem;"><img src="images/Picture_8.JPG" class=""></img></div>  
+            </div>                    
+          </div>
+
+          <!--Profile Posts-->
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+            <div class="card my-4 mx-auto" style="width: 30rem;">
+              <div class="card-header d-flex justify-content-between bg-white">
+                <strong class="title">What a Cool Picture</strong>
+                <p class="date float right" style="padding-top: 10px;">10/16/23</p>
+              </div>
+              <img src="images/Picture_1.JPG" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">
+                  <strong>240 likes</strong>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores nesciunt cum consectetur, commodi odit corporis laborum at, vitae beatae exercitationem velit omnis facilis neque nobis culpa temporibus ducimus quidem excepturi.</p>
+                </p>
+              </div>
+            </div>
+            <div class="card my-4 mx-auto" style="width: 30rem;">
+              <div class="card-header d-flex justify-content-between bg-white">
+                <strong class="title">Whoa, people in a line! </strong>
+                <p class="date float right" style="padding-top: 10px;">10/16/23</p>
+              </div>
+              <img src="images/Picture_2.JPG" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">
+                  <strong>360 likes</strong>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores nesciunt cum consectetur, commodi odit corporis laborum at, vitae beatae exercitationem velit omnis facilis neque nobis culpa temporibus ducimus quidem excepturi.</p>
+                </p>
+              </div>
+            </div>
+            <div class="card my-4 mx-auto" style="width: 30rem;">
+              <div class="card-header d-flex justify-content-between bg-white">
+                <strong class="title">Where am I?</strong>
+                <p class="date float right" style="padding-top: 10px;">10/16/23</p>
+              </div>
+              <img src="images/Picture_3.JPG" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">
+                  <strong>360 likes</strong>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores nesciunt cum consectetur, commodi odit corporis laborum at, vitae beatae exercitationem velit omnis facilis neque nobis culpa temporibus ducimus quidem excepturi.</p>
+                </p>
+              </div>
+            </div>
+            <div class="card my-4 mx-auto" style="width: 30rem;">
+              <div class="card-header d-flex justify-content-between bg-white">
+                <strong class="title">Hahahaha... so funny!</strong>
+                <p class="date float right" style="padding-top: 10px;">10/16/23</p>
+              </div>
+              <img src="images/Picture_4.JPG" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">
+                  <strong>360 likes</strong>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores nesciunt cum consectetur, commodi odit corporis laborum at, vitae beatae exercitationem velit omnis facilis neque nobis culpa temporibus ducimus quidem excepturi.</p>
+                </p>
+              </div>
+            </div>
+          </div>   
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-        <div class="mode">
-            <button type="button" class="mode_btn"><i class="fa-solid fa-table-cells"></i></button>
-            <button type="button" class="mode_btn"><i class="fa-solid fa-square"></i></button>
-        </div>
-        <div class="posts">
-            <img src="images/Picture_1.JPG" class=""></img>
-            <img src="images/Picture_2.JPG" class=""></img>
-            <img src="images/Picture_3.JPG" class=""></img>
-            <img src="images/Picture_4.JPG" class=""></img>
-            <img src="images/Picture_5.JPG" class=""></img>
-            <img src="images/Picture_6.JPG" class=""></img>
-            <img src="images/Picture_7.JPG" class=""></img>
-            <img src="images/Picture_8.JPG" class=""></img>
-            <img src="images/Picture_9.JPG" class=""></img>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
